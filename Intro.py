@@ -1,5 +1,4 @@
 import streamlit as st
-from textwrap import dedent
 
 
 # =========================================================
@@ -22,7 +21,7 @@ st.markdown("""
 <style>
 
 .stApp {
-    background: #0f172a;
+    background-color: #0f172a;
     color: white;
 }
 
@@ -42,90 +41,75 @@ header {
 /* SIDEBAR */
 
 section[data-testid="stSidebar"] {
-    background: #111827;
+    background-color: #111827;
     border-right: 1px solid #263244;
 }
 
-section[data-testid="stSidebar"] h2 {
-    color: white;
-}
 
-section[data-testid="stSidebar"] h3 {
-    color: #60a5fa;
-}
-
-section[data-testid="stSidebar"] p {
-    color: #cbd5e1;
-}
-
-
-/* TÍTULO */
+/* TÍTULO PRINCIPAL */
 
 .titulo {
     text-align: center;
     font-size: 46px;
     font-weight: 800;
-    margin-top: 15px;
-    margin-bottom: 8px;
+    margin-top: 10px;
+    margin-bottom: 5px;
     color: white;
 }
 
-.titulo span {
+.azul {
     color: #60a5fa;
 }
 
 .subtitulo {
     text-align: center;
-    font-size: 18px;
     color: #94a3b8;
+    font-size: 18px;
     margin-bottom: 35px;
 }
 
 
-/* ENLACE PRINCIPAL */
+/* CAJA PRINCIPAL */
 
-.enlace-principal {
+.caja-principal {
     background: linear-gradient(135deg, #1d4ed8, #2563eb);
-    padding: 30px;
     border-radius: 20px;
+    padding: 30px;
     text-align: center;
     margin-bottom: 40px;
-    box-shadow: 0px 10px 30px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
 }
 
-.enlace-principal h3 {
+.caja-titulo {
     color: white;
-    font-size: 24px;
-    margin-bottom: 8px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
-.enlace-principal p {
+.caja-texto {
     color: #dbeafe;
-    font-size: 15px;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 .boton-principal {
     display: inline-block;
-    background: white;
+    background-color: white;
     color: #1d4ed8 !important;
-    padding: 11px 28px;
+    padding: 11px 25px;
     border-radius: 10px;
     text-decoration: none !important;
     font-weight: bold;
-    margin-top: 8px;
-}
-
-.boton-principal:hover {
-    background: #dbeafe;
 }
 
 
-/* TÍTULO SECCIÓN */
+/* TÍTULO DE SECCIÓN */
 
-.seccion {
+.titulo-seccion {
     color: white;
     font-size: 29px;
-    font-weight: 700;
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
@@ -133,63 +117,54 @@ section[data-testid="stSidebar"] p {
 /* TARJETAS */
 
 .tarjeta {
-    background: #1e293b;
+    background-color: #1e293b;
     border: 1px solid #334155;
     border-radius: 20px;
     padding: 25px;
-    margin-bottom: 25px;
     min-height: 330px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.20);
-    transition: all 0.3s ease;
-}
-
-.tarjeta:hover {
-    border-color: #60a5fa;
-    transform: translateY(-5px);
-    box-shadow: 0px 15px 30px rgba(37, 99, 235, 0.20);
+    margin-bottom: 25px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.20);
 }
 
 
 /* EMOJI */
 
-.emoji {
-    font-size: 58px;
-    text-align: center;
-    margin-bottom: 15px;
+.tarjeta-emoji {
+    font-size: 60px;
+    margin-bottom: 12px;
 }
 
 
 /* CATEGORÍA */
 
-.categoria {
-    display: block;
-    width: fit-content;
-    margin: 0 auto 15px auto;
-    background: #172554;
+.tarjeta-categoria {
+    display: inline-block;
+    background-color: #172554;
     color: #93c5fd;
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 12px;
+    margin-bottom: 12px;
 }
 
 
 /* TÍTULO TARJETA */
 
-.tarjeta h3 {
+.tarjeta-titulo {
     color: white;
     font-size: 21px;
-    text-align: center;
+    font-weight: bold;
     margin-bottom: 12px;
 }
 
 
 /* DESCRIPCIÓN */
 
-.descripcion {
+.tarjeta-texto {
     color: #cbd5e1;
     font-size: 15px;
     line-height: 1.6;
-    text-align: center;
     min-height: 75px;
 }
 
@@ -198,19 +173,13 @@ section[data-testid="stSidebar"] p {
 
 .boton {
     display: block;
-    text-align: center;
-    background: #2563eb;
+    background-color: #2563eb;
     color: white !important;
     padding: 11px;
     border-radius: 10px;
     text-decoration: none !important;
     font-weight: bold;
-    margin-top: 15px;
-    transition: 0.2s;
-}
-
-.boton:hover {
-    background: #3b82f6;
+    margin-top: 18px;
 }
 
 
@@ -240,32 +209,24 @@ with st.sidebar:
 
     st.markdown("### Sobre este proyecto")
 
-    st.markdown("""
-La inteligencia artificial permite mejorar la toma de
-decisiones mediante el uso de datos, automatizar tareas
-y desarrollar herramientas capaces de analizar
-información de diferentes maneras.
-""")
+    st.write(
+        "La inteligencia artificial permite mejorar la toma "
+        "de decisiones mediante el uso de datos, automatizar "
+        "tareas y desarrollar herramientas capaces de analizar "
+        "información de diferentes maneras."
+    )
 
     st.markdown("---")
 
     st.markdown("### 🧠 Aplicaciones")
 
-    st.markdown("""
-👁️ Reconocimiento de objetos
-
-📷 Análisis de fotos
-
-🤖 Mi primera app
-
-⚽ Fútbol colombiano
-
-🔊 Texto a voz
-
-💭 Análisis de sentimientos
-
-🧍 Análisis de personas
-""")
+    st.write("👁️ Reconocimiento de objetos")
+    st.write("📷 Análisis de fotos")
+    st.write("🤖 Mi primera app")
+    st.write("⚽ Fútbol colombiano")
+    st.write("🔊 Texto a voz")
+    st.write("💭 Análisis de sentimientos")
+    st.write("🧍 Análisis de personas")
 
     st.markdown("---")
 
@@ -283,7 +244,7 @@ información de diferentes maneras.
 # =========================================================
 
 st.markdown(
-    '<div class="titulo">Aplicaciones de <span>Inteligencia Artificial</span></div>',
+    '<div class="titulo">Aplicaciones de <span class="azul">Inteligencia Artificial</span></div>',
     unsafe_allow_html=True
 )
 
@@ -299,67 +260,39 @@ st.markdown(
 
 url_ia = "https://sites.google.com/view/aplicacionesdeia/inicio"
 
-html_enlace = dedent(f"""
-<div class="enlace-principal">
-    <h3>🌐 Páginas y ejercicios prácticos</h3>
-
-    <p>
-        Encuentra más páginas, ejercicios y proyectos
-        relacionados con Inteligencia Artificial.
-    </p>
-
-    <a href="{url_ia}" target="_blank" class="boton-principal">
-        Explorar página →
-    </a>
-</div>
-""")
-
-st.markdown(html_enlace, unsafe_allow_html=True)
-
-
-# =========================================================
-# TÍTULO DE APLICACIONES
-# =========================================================
-
 st.markdown(
-    '<div class="seccion">🚀 Mis aplicaciones</div>',
+    '<div class="caja-principal"><div class="caja-titulo">🌐 Páginas y ejercicios prácticos</div><div class="caja-texto">Encuentra más páginas, ejercicios y proyectos relacionados con Inteligencia Artificial.</div><a href="' + url_ia + '" target="_blank" class="boton-principal">Explorar página →</a></div>',
     unsafe_allow_html=True
 )
 
 
 # =========================================================
-# FUNCIÓN PARA CREAR TARJETAS
+# TÍTULO
+# =========================================================
+
+st.markdown(
+    '<div class="titulo-seccion">🚀 Mis aplicaciones</div>',
+    unsafe_allow_html=True
+)
+
+
+# =========================================================
+# FUNCIÓN DE TARJETAS
 # =========================================================
 
 def crear_tarjeta(emoji, titulo, categoria, descripcion, url):
 
-    tarjeta = dedent(f"""
-    <div class="tarjeta">
+    html = (
+        '<div class="tarjeta">'
+        '<div class="tarjeta-emoji">' + emoji + '</div>'
+        '<div class="tarjeta-categoria">' + categoria + '</div>'
+        '<div class="tarjeta-titulo">' + titulo + '</div>'
+        '<div class="tarjeta-texto">' + descripcion + '</div>'
+        '<a href="' + url + '" target="_blank" class="boton">Abrir aplicación →</a>'
+        '</div>'
+    )
 
-        <div class="emoji">
-            {emoji}
-        </div>
-
-        <div class="categoria">
-            {categoria}
-        </div>
-
-        <h3>
-            {titulo}
-        </h3>
-
-        <div class="descripcion">
-            {descripcion}
-        </div>
-
-        <a href="{url}" target="_blank" class="boton">
-            Abrir aplicación →
-        </a>
-
-    </div>
-    """)
-
-    st.markdown(tarjeta, unsafe_allow_html=True)
+    st.markdown(html, unsafe_allow_html=True)
 
 
 # =========================================================
@@ -451,16 +384,6 @@ with col3:
 # =========================================================
 
 st.markdown(
-    """
-    <div class="footer">
-        🤖 <b>Aplicaciones de Inteligencia Artificial</b>
-        <br><br>
-        Proyecto académico · Diseño Interactivo
-        <br><br>
-        Explorando diferentes posibilidades de la Inteligencia Artificial.
-    </div>
-    """,
+    '<div class="footer">🤖 <b>Aplicaciones de Inteligencia Artificial</b><br><br>Proyecto académico · Diseño Interactivo<br><br>Explorando diferentes posibilidades de la Inteligencia Artificial.</div>',
     unsafe_allow_html=True
 )
-
-
