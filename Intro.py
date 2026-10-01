@@ -32,7 +32,7 @@ with col1:
  st.image(image, width=200)
  st.write("En la siguiente enlace veremos como analizar fotos con IA.") 
  url = "https://photoan.streamlit.app"
- st.write(f"YOLO: [Enlace]({url})")
+ st.write(f"Analisis: [Enlace]({url})")
 
 with col2: 
  st.subheader("Mi primera app")
@@ -40,21 +40,21 @@ with col2:
  st.image(image, width=200)
  st.write("En la siguiente veremos la primer app que hice en la materia") 
  url = "https://app1simon.streamlit.app"
- st.write(f"Voz a texto: [Enlace]({url})")
+ st.write(f"Primera app: [Enlace]({url})")
 
  st.subheader("Análisis del futbol colombiano")
  image = Image.open('data_analisis.png')
  st.image(image, width=190)
  st.write("En la siguiente enlace veremos una IA que te habla del futbol colombiano.") 
  url = "https://chatfpc.streamlit.app"
- st.write(f"Datos: [Enlace]({url})")
+ st.write(f"FPC: [Enlace]({url})")
 
  st.subheader("Texto a voz")
  image = Image.open('OIG3.jpg')
  st.image(image, width=200)
  st.write("En la siguiente enlace veremos una app que pasa el texto a audio.") 
  url = "https://imm1profesor01.streamlit.app"
- st.write(f"Transcriptor: [Enlace]({url})")
+ st.write(f"Texto a voz: [Enlace]({url})")
 
 
 with col3: 
@@ -63,14 +63,14 @@ with col3:
  st.image(image, width=190)
  st.write("En la siguiente veremos una aplicación analiza como te sientes") 
  url = "https://chatpdf-cc.streamlit.app/"
- st.write(f"RAG: [Enlace]({url})")
+ st.write(f"Sentimientos: [Enlace]({url})")
 
  st.subheader("Análisis de personas")
  image = Image.open('OIG4.jpg')
  st.image(image, width=200)
  st.write("En la siguiente enlace veremos si en tus imagenes hay o no personas") 
  url = "https://vision2-gpt4o.streamlit.app/"
- st.write(f"Vision: [Enlace]({url})")
+ st.write(f"Personas: [Enlace]({url})")
  
 
 
