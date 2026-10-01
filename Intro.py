@@ -6,7 +6,7 @@ import streamlit as st
 # =========================================================
 
 st.set_page_config(
-    page_title="Aplicaciones de Inteligencia Artificial Simon Cock Garcia",
+    page_title="Aplicaciones de Inteligencia Artificial",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -45,6 +45,18 @@ section[data-testid="stSidebar"] {
     border-right: 1px solid #263244;
 }
 
+section[data-testid="stSidebar"] h2 {
+    color: white;
+}
+
+section[data-testid="stSidebar"] h3 {
+    color: #60a5fa;
+}
+
+section[data-testid="stSidebar"] p {
+    color: #cbd5e1;
+}
+
 
 /* TÍTULO PRINCIPAL */
 
@@ -60,6 +72,21 @@ section[data-testid="stSidebar"] {
 .azul {
     color: #60a5fa;
 }
+
+
+/* NOMBRE */
+
+.nombre {
+    text-align: center;
+    color: #e2e8f0;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+
+/* SUBTÍTULO */
 
 .subtitulo {
     text-align: center;
@@ -103,6 +130,10 @@ section[data-testid="stSidebar"] {
     font-weight: bold;
 }
 
+.boton-principal:hover {
+    background-color: #dbeafe;
+}
+
 
 /* TÍTULO DE SECCIÓN */
 
@@ -125,6 +156,13 @@ section[data-testid="stSidebar"] {
     margin-bottom: 25px;
     text-align: center;
     box-shadow: 0 8px 20px rgba(0,0,0,0.20);
+    transition: all 0.3s ease;
+}
+
+.tarjeta:hover {
+    border-color: #60a5fa;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.20);
 }
 
 
@@ -180,6 +218,11 @@ section[data-testid="stSidebar"] {
     text-decoration: none !important;
     font-weight: bold;
     margin-top: 18px;
+    transition: 0.2s;
+}
+
+.boton:hover {
+    background-color: #3b82f6;
 }
 
 
@@ -249,6 +292,11 @@ st.markdown(
 )
 
 st.markdown(
+    '<div class="nombre">Simon Cock García</div>',
+    unsafe_allow_html=True
+)
+
+st.markdown(
     '<div class="subtitulo">Explora diferentes aplicaciones y experimentos desarrollados con IA</div>',
     unsafe_allow_html=True
 )
@@ -261,13 +309,22 @@ st.markdown(
 url_ia = "https://sites.google.com/view/aplicacionesdeia/inicio"
 
 st.markdown(
-    '<div class="caja-principal"><div class="caja-titulo">🌐 Páginas y ejercicios prácticos</div><div class="caja-texto">Encuentra más páginas, ejercicios y proyectos relacionados con Inteligencia Artificial.</div><a href="' + url_ia + '" target="_blank" class="boton-principal">Explorar página →</a></div>',
+    '<div class="caja-principal">'
+    '<div class="caja-titulo">🌐 Páginas y ejercicios prácticos</div>'
+    '<div class="caja-texto">'
+    'Encuentra más páginas, ejercicios y proyectos relacionados '
+    'con Inteligencia Artificial.'
+    '</div>'
+    '<a href="' + url_ia + '" target="_blank" class="boton-principal">'
+    'Explorar página →'
+    '</a>'
+    '</div>',
     unsafe_allow_html=True
 )
 
 
 # =========================================================
-# TÍTULO
+# TÍTULO DE LAS APLICACIONES
 # =========================================================
 
 st.markdown(
@@ -277,7 +334,7 @@ st.markdown(
 
 
 # =========================================================
-# FUNCIÓN DE TARJETAS
+# FUNCIÓN PARA CREAR TARJETAS
 # =========================================================
 
 def crear_tarjeta(emoji, titulo, categoria, descripcion, url):
@@ -288,7 +345,9 @@ def crear_tarjeta(emoji, titulo, categoria, descripcion, url):
         '<div class="tarjeta-categoria">' + categoria + '</div>'
         '<div class="tarjeta-titulo">' + titulo + '</div>'
         '<div class="tarjeta-texto">' + descripcion + '</div>'
-        '<a href="' + url + '" target="_blank" class="boton">Abrir aplicación →</a>'
+        '<a href="' + url + '" target="_blank" class="boton">'
+        'Abrir aplicación →'
+        '</a>'
         '</div>'
     )
 
@@ -384,6 +443,12 @@ with col3:
 # =========================================================
 
 st.markdown(
-    '<div class="footer">🤖 <b>Aplicaciones de Inteligencia Artificial</b><br><br>Proyecto académico · Diseño Interactivo<br><br>Explorando diferentes posibilidades de la Inteligencia Artificial.</div>',
+    '<div class="footer">'
+    '🤖 <b>Aplicaciones de Inteligencia Artificial</b>'
+    '<br><br>'
+    'Simon Cock García · Diseño Interactivo'
+    '<br><br>'
+    'Explorando diferentes posibilidades de la Inteligencia Artificial.'
+    '</div>',
     unsafe_allow_html=True
 )
