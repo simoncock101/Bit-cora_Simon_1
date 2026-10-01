@@ -426,7 +426,7 @@ with col3:
         "Analiza tus sentimientos",
         "Análisis de texto",
         "Analiza textos para identificar información relacionada con sentimientos y emociones.",
-        "https://chatpdf-cc.streamlit.app/"
+        "https://sentimentascg.streamlit.app/"
     )
 
     crear_tarjeta(
@@ -434,7 +434,7 @@ with col3:
         "Análisis de personas",
         "Visión artificial",
         "Analiza imágenes para identificar si aparecen personas.",
-        "https://vision2-gpt4o.streamlit.app/"
+        "https://editablereconocimiento.streamlit.app/"
     )
 
 
