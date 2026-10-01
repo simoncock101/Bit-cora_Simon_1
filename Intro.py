@@ -6,7 +6,7 @@ import streamlit as st
 # =========================================================
 
 st.set_page_config(
-    page_title="Aplicaciones de Inteligencia Artificial",
+    page_title="Aplicaciones de Inteligencia Artificial Simon Cock Garcia",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
