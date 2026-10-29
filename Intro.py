@@ -429,6 +429,17 @@ aplicaciones = [
             "relacionadas con la reproducción o el control de audio."
         ),
         "url": "https://ejemploaudioybotones.streamlit.app"
+    },
+
+    {
+        "emoji": "🖌️",
+        "titulo": "Tablero de dibujo",
+        "categoria": "Dibujo e interacción",
+        "descripcion": (
+            "Un espacio interactivo para realizar dibujos digitales "
+            "y experimentar con herramientas de creación visual."
+        ),
+        "url": "https://tablerodedibujoscg.streamlit.app"
     }
 
 ]
@@ -580,3 +591,4 @@ st.markdown(
     '</div>',
     unsafe_allow_html=True
 )
+
