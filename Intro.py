@@ -1,3 +1,4 @@
+
 import streamlit as st
 
 
@@ -6,8 +7,8 @@ import streamlit as st
 # =========================================================
 
 st.set_page_config(
-    page_title="Aplicaciones de Inteligencia Artificial",
-    page_icon="🤖",
+    page_title="Mis aplicaciones y proyectos",
+    page_icon="💻",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -152,10 +153,10 @@ section[data-testid="stSidebar"] p {
     border: 1px solid #334155;
     border-radius: 20px;
     padding: 25px;
-    min-height: 330px;
+    min-height: 350px;
     margin-bottom: 25px;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.20);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
     transition: all 0.3s ease;
 }
 
@@ -236,6 +237,36 @@ section[data-testid="stSidebar"] p {
     border-top: 1px solid #1e293b;
 }
 
+
+/* ADAPTACIÓN A MÓVILES */
+
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 32px;
+    }
+
+    .nombre {
+        font-size: 19px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+    }
+
+    .caja-principal {
+        padding: 22px;
+    }
+
+    .tarjeta {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .tarjeta-emoji {
+        font-size: 48px;
+    }
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -246,22 +277,22 @@ section[data-testid="stSidebar"] p {
 
 with st.sidebar:
 
-    st.markdown("## 🤖 Aplicaciones de IA")
+    st.markdown("## 💻 Mis proyectos")
 
     st.markdown("---")
 
-    st.markdown("### Sobre este proyecto")
+    st.markdown("### Sobre este portafolio")
 
     st.write(
-        "La inteligencia artificial permite mejorar la toma "
-        "de decisiones mediante el uso de datos, automatizar "
-        "tareas y desarrollar herramientas capaces de analizar "
-        "información de diferentes maneras."
+        "Este espacio reúne aplicaciones, experimentos y proyectos "
+        "interactivos desarrollados durante mi formación en Diseño "
+        "Interactivo. Explora herramientas, experiencias digitales "
+        "y soluciones creadas con diferentes tecnologías."
     )
 
     st.markdown("---")
 
-    st.markdown("### 🧠 Aplicaciones")
+    st.markdown("### 🚀 Proyectos")
 
     st.write("👁️ Reconocimiento de objetos")
     st.write("📷 Análisis de fotos")
@@ -270,16 +301,21 @@ with st.sidebar:
     st.write("🔊 Texto a voz")
     st.write("💭 Análisis de sentimientos")
     st.write("🧍 Análisis de personas")
+    st.write("🎨 Tablero de dibujos")
+    st.write("🔐 Cerradura facial")
+    st.write("🔢 Detector de números escritos a mano")
 
     st.markdown("---")
 
-    st.markdown("### 📚 Proyecto académico")
+    st.markdown("### 🎓 Formación")
 
-    st.write("Diseño Interactivo")
+    st.write("Diseño Interactivo · Universidad EAFIT")
 
     st.markdown("---")
 
-    st.caption("Explorando las posibilidades de la Inteligencia Artificial.")
+    st.caption(
+        "Diseño, experimentación y desarrollo de experiencias digitales."
+    )
 
 
 # =========================================================
@@ -287,7 +323,8 @@ with st.sidebar:
 # =========================================================
 
 st.markdown(
-    '<div class="titulo">Aplicaciones de <span class="azul">Inteligencia Artificial</span></div>',
+    '<div class="titulo">Mis aplicaciones y '
+    '<span class="azul">proyectos interactivos</span></div>',
     unsafe_allow_html=True
 )
 
@@ -297,7 +334,10 @@ st.markdown(
 )
 
 st.markdown(
-    '<div class="subtitulo">Explora diferentes aplicaciones y experimentos desarrollados con IA</div>',
+    '<div class="subtitulo">'
+    'Explora aplicaciones, experimentos y experiencias digitales '
+    'desarrolladas durante mi formación.'
+    '</div>',
     unsafe_allow_html=True
 )
 
@@ -310,12 +350,12 @@ url_ia = "https://sites.google.com/view/aplicacionesdeia/inicio"
 
 st.markdown(
     '<div class="caja-principal">'
-    '<div class="caja-titulo">🌐 Páginas y ejercicios prácticos</div>'
+    '<div class="caja-titulo">🌐 Recursos y proyectos</div>'
     '<div class="caja-texto">'
-    'Encuentra más páginas, ejercicios y proyectos relacionados '
-    'con Inteligencia Artificial.'
+    'Descubre más ejercicios, herramientas y proyectos digitales.'
     '</div>'
-    '<a href="' + url_ia + '" target="_blank" class="boton-principal">'
+    '<a href="' + url_ia + '" target="_blank" '
+    'rel="noopener noreferrer" class="boton-principal">'
     'Explorar página →'
     '</a>'
     '</div>',
@@ -328,25 +368,149 @@ st.markdown(
 # =========================================================
 
 st.markdown(
-    '<div class="titulo-seccion">🚀 Mis aplicaciones</div>',
+    '<div class="titulo-seccion">🚀 Mis proyectos</div>',
     unsafe_allow_html=True
 )
+
+st.caption(
+    "Explora los proyectos y accede a cada aplicación."
+)
+
+
+# =========================================================
+# LISTA DE APLICACIONES
+# =========================================================
+
+aplicaciones = [
+
+    {
+        "emoji": "👁️",
+        "titulo": "Reconocimiento de objetos",
+        "categoria": "Visión artificial",
+        "descripcion": (
+            "Detecta y reconoce diferentes objetos dentro de imágenes "
+            "utilizando modelos de reconocimiento visual."
+        ),
+        "url": "https://yoloscg.streamlit.app"
+    },
+
+    {
+        "emoji": "📷",
+        "titulo": "Análisis de fotos",
+        "categoria": "Análisis de imágenes",
+        "descripcion": (
+            "Permite analizar fotografías utilizando herramientas "
+            "de procesamiento e interpretación de imágenes."
+        ),
+        "url": "https://photoan.streamlit.app"
+    },
+
+    {
+        "emoji": "🤖",
+        "titulo": "Mi primera app",
+        "categoria": "Proyecto inicial",
+        "descripcion": (
+            "La primera aplicación que desarrollé durante la materia, "
+            "como parte de mi exploración de herramientas digitales."
+        ),
+        "url": "https://app1simon.streamlit.app"
+    },
+
+    {
+        "emoji": "⚽",
+        "titulo": "Análisis del fútbol colombiano",
+        "categoria": "Deportes y datos",
+        "descripcion": (
+            "Una aplicación para interactuar con información "
+            "relacionada con el fútbol profesional colombiano."
+        ),
+        "url": "https://chatfpc.streamlit.app"
+    },
+
+    {
+        "emoji": "🔊",
+        "titulo": "Texto a voz",
+        "categoria": "Voz y audio",
+        "descripcion": (
+            "Convierte texto escrito en audio mediante herramientas "
+            "de síntesis de voz."
+        ),
+        "url": "https://imm1profesor01.streamlit.app"
+    },
+
+    {
+        "emoji": "💭",
+        "titulo": "Analiza tus sentimientos",
+        "categoria": "Análisis de texto",
+        "descripcion": (
+            "Analiza textos para identificar información relacionada "
+            "con sentimientos y emociones."
+        ),
+        "url": "https://sentimentascg.streamlit.app/"
+    },
+
+    {
+        "emoji": "🧍",
+        "titulo": "Análisis de personas",
+        "categoria": "Visión artificial",
+        "descripcion": (
+            "Analiza imágenes para identificar la presencia de personas."
+        ),
+        "url": "https://editablereconocimiento.streamlit.app/"
+    },
+
+    {
+        "emoji": "🎨",
+        "titulo": "Tablero de dibujos",
+        "categoria": "Dibujo e interacción",
+        "descripcion": (
+            "Permite realizar dibujos en un tablero y explorar "
+            "su interpretación y descripción mediante herramientas "
+            "digitales."
+        ),
+        "url": "https://dibujosdescripcionscg.streamlit.app"
+    },
+
+    {
+        "emoji": "🔐",
+        "titulo": "Cerradura facial",
+        "categoria": "Reconocimiento facial",
+        "descripcion": (
+            "Explora el reconocimiento facial como mecanismo "
+            "de identificación dentro de una experiencia de acceso."
+        ),
+        "url": "https://cerradurafacial.streamlit.app"
+    },
+
+    {
+        "emoji": "🔢",
+        "titulo": "Detector de números escritos a mano",
+        "categoria": "Reconocimiento de dígitos",
+        "descripcion": (
+            "Reconoce números dibujados a mano mediante un sistema "
+            "de clasificación de dígitos."
+        ),
+        "url": "https://detectordigitosmanos.streamlit.app"
+    }
+
+]
 
 
 # =========================================================
 # FUNCIÓN PARA CREAR TARJETAS
 # =========================================================
 
-def crear_tarjeta(emoji, titulo, categoria, descripcion, url):
+def crear_tarjeta(app):
 
     html = (
         '<div class="tarjeta">'
-        '<div class="tarjeta-emoji">' + emoji + '</div>'
-        '<div class="tarjeta-categoria">' + categoria + '</div>'
-        '<div class="tarjeta-titulo">' + titulo + '</div>'
-        '<div class="tarjeta-texto">' + descripcion + '</div>'
-        '<a href="' + url + '" target="_blank" class="boton">'
-        'Abrir aplicación →'
+        '<div class="tarjeta-emoji">' + app["emoji"] + '</div>'
+        '<div class="tarjeta-categoria">' + app["categoria"] + '</div>'
+        '<div class="tarjeta-titulo">' + app["titulo"] + '</div>'
+        '<div class="tarjeta-texto">' + app["descripcion"] + '</div>'
+        '<a href="' + app["url"] + '" target="_blank" '
+        'rel="noopener noreferrer" class="boton">'
+        'Abrir proyecto →'
         '</a>'
         '</div>'
     )
@@ -355,87 +519,15 @@ def crear_tarjeta(emoji, titulo, categoria, descripcion, url):
 
 
 # =========================================================
-# COLUMNAS
+# DISTRIBUCIÓN AUTOMÁTICA EN TRES COLUMNAS
 # =========================================================
 
-col1, col2, col3 = st.columns(3, gap="large")
+columnas = st.columns(3, gap="large")
 
+for indice, app in enumerate(aplicaciones):
 
-# =========================================================
-# COLUMNA 1
-# =========================================================
-
-with col1:
-
-    crear_tarjeta(
-        "👁️",
-        "Reconocimiento de objetos",
-        "Visión artificial",
-        "Detecta y reconoce diferentes objetos dentro de imágenes utilizando inteligencia artificial.",
-        "https://yoloscg.streamlit.app"
-    )
-
-    crear_tarjeta(
-        "📷",
-        "Análisis de fotos",
-        "Análisis de imágenes",
-        "Permite analizar fotografías utilizando modelos de inteligencia artificial.",
-        "https://photoan.streamlit.app"
-    )
-
-
-# =========================================================
-# COLUMNA 2
-# =========================================================
-
-with col2:
-
-    crear_tarjeta(
-        "🤖",
-        "Mi primera app",
-        "Proyecto inicial",
-        "La primera aplicación que desarrollé durante la materia utilizando herramientas de inteligencia artificial.",
-        "https://app1simon.streamlit.app"
-    )
-
-    crear_tarjeta(
-        "⚽",
-        "Análisis del fútbol colombiano",
-        "Datos e IA",
-        "Una aplicación que permite interactuar con información relacionada con el fútbol profesional colombiano.",
-        "https://chatfpc.streamlit.app"
-    )
-
-    crear_tarjeta(
-        "🔊",
-        "Texto a voz",
-        "Voz y audio",
-        "Convierte texto escrito en audio utilizando herramientas de inteligencia artificial.",
-        "https://imm1profesor01.streamlit.app"
-    )
-
-
-# =========================================================
-# COLUMNA 3
-# =========================================================
-
-with col3:
-
-    crear_tarjeta(
-        "💭",
-        "Analiza tus sentimientos",
-        "Análisis de texto",
-        "Analiza textos para identificar información relacionada con sentimientos y emociones.",
-        "https://sentimentascg.streamlit.app/"
-    )
-
-    crear_tarjeta(
-        "🧍",
-        "Análisis de personas",
-        "Visión artificial",
-        "Analiza imágenes para identificar si aparecen personas.",
-        "https://editablereconocimiento.streamlit.app/"
-    )
+    with columnas[indice % 3]:
+        crear_tarjeta(app)
 
 
 # =========================================================
@@ -444,11 +536,11 @@ with col3:
 
 st.markdown(
     '<div class="footer">'
-    '🤖 <b>Aplicaciones de Inteligencia Artificial</b>'
+    '💻 <b>Aplicaciones y proyectos interactivos</b>'
     '<br><br>'
     'Simon Cock García · Diseño Interactivo'
     '<br><br>'
-    'Explorando diferentes posibilidades de la Inteligencia Artificial.'
+    'Diseñando y desarrollando experiencias digitales.'
     '</div>',
     unsafe_allow_html=True
 )
