@@ -272,112 +272,6 @@ section[data-testid="stSidebar"] p {
 
 
 # =========================================================
-# SIDEBAR
-# =========================================================
-
-with st.sidebar:
-
-    st.markdown("## 💻 Mis proyectos")
-
-    st.markdown("---")
-
-    st.markdown("### Sobre este portafolio")
-
-    st.write(
-        "Este espacio reúne aplicaciones, experimentos y proyectos "
-        "interactivos desarrollados durante mi formación en Diseño "
-        "Interactivo. Explora herramientas, experiencias digitales "
-        "y soluciones creadas con diferentes tecnologías."
-    )
-
-    st.markdown("---")
-
-    st.markdown("### 🚀 Proyectos")
-
-    st.write("👁️ Reconocimiento de objetos")
-    st.write("📷 Análisis de fotos")
-    st.write("🤖 Mi primera app")
-    st.write("⚽ Fútbol colombiano")
-    st.write("🔊 Texto a voz")
-    st.write("💭 Análisis de sentimientos")
-    st.write("🧍 Análisis de personas")
-    st.write("🎨 Tablero de dibujos")
-    st.write("🔐 Cerradura facial")
-    st.write("🔢 Detector de números escritos a mano")
-
-    st.markdown("---")
-
-    st.markdown("### 🎓 Formación")
-
-    st.write("Diseño Interactivo · Universidad EAFIT")
-
-    st.markdown("---")
-
-    st.caption(
-        "Diseño, experimentación y desarrollo de experiencias digitales."
-    )
-
-
-# =========================================================
-# ENCABEZADO
-# =========================================================
-
-st.markdown(
-    '<div class="titulo">Mis aplicaciones y '
-    '<span class="azul">proyectos interactivos</span></div>',
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    '<div class="nombre">Simon Cock García</div>',
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    '<div class="subtitulo">'
-    'Explora aplicaciones, experimentos y experiencias digitales '
-    'desarrolladas durante mi formación.'
-    '</div>',
-    unsafe_allow_html=True
-)
-
-
-# =========================================================
-# ENLACE PRINCIPAL
-# =========================================================
-
-url_ia = "https://sites.google.com/view/aplicacionesdeia/inicio"
-
-st.markdown(
-    '<div class="caja-principal">'
-    '<div class="caja-titulo">🌐 Recursos y proyectos</div>'
-    '<div class="caja-texto">'
-    'Descubre más ejercicios, herramientas y proyectos digitales.'
-    '</div>'
-    '<a href="' + url_ia + '" target="_blank" '
-    'rel="noopener noreferrer" class="boton-principal">'
-    'Explorar página →'
-    '</a>'
-    '</div>',
-    unsafe_allow_html=True
-)
-
-
-# =========================================================
-# TÍTULO DE LAS APLICACIONES
-# =========================================================
-
-st.markdown(
-    '<div class="titulo-seccion">🚀 Mis proyectos</div>',
-    unsafe_allow_html=True
-)
-
-st.caption(
-    "Explora los proyectos y accede a cada aplicación."
-)
-
-
-# =========================================================
 # LISTA DE APLICACIONES
 # =========================================================
 
@@ -491,9 +385,151 @@ aplicaciones = [
             "de clasificación de dígitos."
         ),
         "url": "https://detectordigitosmanos.streamlit.app"
+    },
+
+    {
+        "emoji": "🎙️",
+        "titulo": "Control por voz",
+        "categoria": "Interfaces multimodales",
+        "descripcion": (
+            "Permite dar instrucciones mediante la voz y transmitir "
+            "los comandos a otro sistema a través de comunicación MQTT."
+        ),
+        "url": "https://controlvozscg.streamlit.app"
+    },
+
+    {
+        "emoji": "🗂️",
+        "titulo": "Aplicación multipáginas",
+        "categoria": "Navegación web",
+        "descripcion": (
+            "Explora una aplicación estructurada en diferentes páginas "
+            "para organizar contenidos y facilitar la navegación."
+        ),
+        "url": "https://multipaginas.streamlit.app"
+    },
+
+    {
+        "emoji": "📑",
+        "titulo": "Ejemplo 1 multipágina",
+        "categoria": "Navegación web",
+        "descripcion": (
+            "Proyecto de ejemplo que demuestra la organización "
+            "y navegación entre distintas páginas de una aplicación."
+        ),
+        "url": "https://ejemplo1multipagina.streamlit.app"
+    },
+
+    {
+        "emoji": "🔊",
+        "titulo": "Audio y botones",
+        "categoria": "Interacción multimedia",
+        "descripcion": (
+            "Explora una interfaz con botones interactivos y funciones "
+            "relacionadas con la reproducción o el control de audio."
+        ),
+        "url": "https://ejemploaudioybotones.streamlit.app"
     }
 
 ]
+
+
+# =========================================================
+# SIDEBAR
+# =========================================================
+
+with st.sidebar:
+
+    st.markdown("## 💻 Mis proyectos")
+
+    st.markdown("---")
+
+    st.markdown("### Sobre este portafolio")
+
+    st.write(
+        "Este espacio reúne aplicaciones, experimentos y proyectos "
+        "interactivos desarrollados durante mi formación en Diseño "
+        "Interactivo. Explora herramientas, experiencias digitales "
+        "y soluciones creadas con diferentes tecnologías."
+    )
+
+    st.markdown("---")
+
+    st.markdown("### 🚀 Proyectos")
+
+    for app in aplicaciones:
+        st.write(f'{app["emoji"]} {app["titulo"]}')
+
+    st.markdown("---")
+
+    st.markdown("### 🎓 Formación")
+
+    st.write("Diseño Interactivo · Universidad EAFIT")
+
+    st.markdown("---")
+
+    st.caption(
+        "Diseño, experimentación y desarrollo de experiencias digitales."
+    )
+
+
+# =========================================================
+# ENCABEZADO
+# =========================================================
+
+st.markdown(
+    '<div class="titulo">Mis aplicaciones y '
+    '<span class="azul">proyectos interactivos</span></div>',
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    '<div class="nombre">Simon Cock García</div>',
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    '<div class="subtitulo">'
+    'Explora aplicaciones, experimentos y experiencias digitales '
+    'desarrolladas durante mi formación.'
+    '</div>',
+    unsafe_allow_html=True
+)
+
+
+# =========================================================
+# ENLACE PRINCIPAL
+# =========================================================
+
+url_ia = "https://sites.google.com/view/aplicacionesdeia/inicio"
+
+st.markdown(
+    '<div class="caja-principal">'
+    '<div class="caja-titulo">🌐 Recursos y proyectos</div>'
+    '<div class="caja-texto">'
+    'Descubre más ejercicios, herramientas y proyectos digitales.'
+    '</div>'
+    '<a href="' + url_ia + '" target="_blank" '
+    'rel="noopener noreferrer" class="boton-principal">'
+    'Explorar página →'
+    '</a>'
+    '</div>',
+    unsafe_allow_html=True
+)
+
+
+# =========================================================
+# TÍTULO Y CONTADOR DE PROYECTOS
+# =========================================================
+
+st.markdown(
+    '<div class="titulo-seccion">🚀 Mis proyectos</div>',
+    unsafe_allow_html=True
+)
+
+st.caption(
+    f"Explora los {len(aplicaciones)} proyectos y accede a cada aplicación."
+)
 
 
 # =========================================================
